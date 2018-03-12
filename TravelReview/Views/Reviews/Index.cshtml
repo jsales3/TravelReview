@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TravelReview.Models.Review>
+
+@{
+    ViewBag.Title = "Reviews";
+}
+
+<div class=" row reviewhead">
+    <div class="col">
+        <h2>Reviews</h2>
+
+        <p>
+            @Html.ActionLink("Write a Review", "Create")
+        </p>
+    </div>
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div class="row reviews">
+        <div class="col">
+
+            <h2>@Html.DisplayFor(modelItem => item.Category.CategoryName): @Html.DisplayFor(modelItem => item.Category.CategoryType) </h2>
+
+
+            <p class=" ratings">
+                @Html.DisplayNameFor(model => model.Ratings):
+                @Html.DisplayFor(modelItem => item.Ratings)
+            </p>
+
+            <p class="comments">@Html.DisplayFor(modelItem => item.Comments)</p>
+        </div>
+
+        <td>
+            @* @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }) |*@
+            @Html.ActionLink("Details", "Details", new { id = item.ReviewID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })*@
+        </td>
+    </div>
+    
+    <hr />
+
+}
+
+

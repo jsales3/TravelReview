@@ -1,0 +1,49 @@
+﻿@model TravelReview.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <div class="row details">
+        <div class="col-md-4 thumbnail ">
+
+
+            <p class="comments">Name: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
+
+
+            <p class="comments">
+                (City/State): @Html.DisplayFor(model => model.City),  @Html.DisplayFor(model => model.State)
+            </p>
+
+            <p class="comments">@Html.DisplayNameFor(model => model.CategoryID): @Html.DisplayFor(model => model.Category.CategoryName)</p>
+
+            <p class="comments">@Html.DisplayNameFor(model => model.Ratings): @Html.DisplayFor(model => model.Ratings)</p>
+
+            <p class="comments">
+                @Html.DisplayNameFor(model => model.Comments):
+            </p>
+            <p class="comments">
+                @Html.DisplayFor(model => model.Comments)
+            </p>
+
+
+
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ReviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
